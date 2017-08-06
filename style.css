@@ -32,7 +32,7 @@ margin-top: 11em;
   background: pink;
   top: 50%;*/
   transform-origin: 100%;
-  transform: rotate(90deg);
+  /*transform: rotate(90deg);*/
 }
 
 .hour-hand{

@@ -28,12 +28,12 @@
     secondHand.style.transform = "rotate("+secDegree+"deg)";
 
     var minutes = date.getMinutes();
-    var minDegree = (minutes*60)+90;
+    var minDegree = (minutes*6) + (0.1*seconds)+90;
     //console.log("minutes= "+ minutes+ "and degree = "+minDegree);
-    hourHand.style.transform = "rotate("+minDegree+"deg)";
+    minHand.style.transform = "rotate("+minDegree+"deg)";
 
     var hours = date.getHours()%12;
-    var hourDegree = (hours*30)+90;
+    var hourDegree = (hours*30) + (minutes*0.5)+90;
   //  console.log("hours= "+ hours+ "and degree = "+hourDegree);
     hourHand.style.transform = "rotate("+hourDegree+"deg)";
 
