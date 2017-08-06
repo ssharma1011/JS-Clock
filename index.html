@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="clock">
+      <div class="clockInside">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand sec-hand"></div>
+      </div>
+    </div>
+<script>
+  var secondHand = document.querySelector(".sec-hand");
+  var hourHand = document.querySelector(".hour-hand");
+  var minHand = document.querySelector(".min-hand");
+//  console.log(secondHand);
+
+  function DateTime(){
+    var date = new Date();
+    var seconds = date.getSeconds();
+    var secDegree = (seconds*6)+90;
+    //console.log("seconds= "+ seconds+ "and degree = "+secDegree);
+    secondHand.style.transform = "rotate("+secDegree+"deg)";
+
+    var minutes = date.getMinutes();
+    var minDegree = (minutes*60)+90;
+    //console.log("minutes= "+ minutes+ "and degree = "+minDegree);
+    hourHand.style.transform = "rotate("+minDegree+"deg)";
+
+    var hours = date.getHours()%12;
+    var hourDegree = (hours*30)+90;
+  //  console.log("hours= "+ hours+ "and degree = "+hourDegree);
+    hourHand.style.transform = "rotate("+hourDegree+"deg)";
+
+  }
+
+   window.setInterval(DateTime,1000);
+   DateTime();
+</script>
+
+  </body>
+</html>
